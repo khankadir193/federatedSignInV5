@@ -1,13 +1,17 @@
 import React from "react";
+import { Auth } from "aws-amplify";
 
 const FederatedSignIn = () => {
-  const handleFederatedSignIn = () => {
-    
+  const handleFederatedSignIn = async() => {
+    try{
+        await Auth.federatedSignIn({provider:'azure'});
+    }catch(err){
+        console.error('getting error...',err);
+    }
   };
 
   return (
     <div>
-      <h1>Hi This is the federated signin</h1>
       <button onClick={handleFederatedSignIn}>Federated SignIn</button>
     </div>
   );
