@@ -4,6 +4,7 @@ import FederatedSignIn from "./FederatedSignIn";
 import { Amplify, Auth } from "aws-amplify";
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SignOutComp from "./Components/SignOutComp";
 
 function App() {
   Amplify.configure({
@@ -24,11 +25,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<FederatedSignIn />}></Route>
-          <Route path="/signout" element={<FederatedSignIn />}> </Route>
+          <Route path="/signout" element={<SignOutComp />}> </Route>
         </Routes>
       </BrowserRouter>
-      <h2>Hi This is the federated Signin</h2>
-      <FederatedSignIn />
+      {/* <h2>Hi This is the federated Signin</h2> */}
+      {/* <FederatedSignIn /> */}
     </div>
   );
 }
