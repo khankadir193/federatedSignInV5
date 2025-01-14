@@ -1,12 +1,16 @@
 import React from "react";
 import { Auth } from "aws-amplify";
+import { useNavigate } from "react-router-dom";
 
 const FederatedSignIn = () => {
-  const handleFederatedSignIn = async() => {
-    try{
-        await Auth.federatedSignIn({provider:'azure'});
-    }catch(err){
-        console.error('getting error...',err);
+  const navigate = useNavigate();
+
+  const handleFederatedSignIn = async () => {
+    try {
+      await Auth.federatedSignIn({ provider: "azure" });
+      navigate('/signout')
+    } catch (err) {
+      console.error("getting error...", err);
     }
   };
 
