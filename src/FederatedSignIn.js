@@ -8,7 +8,7 @@ const FederatedSignIn = () => {
   const handleFederatedSignIn = async () => {
     try {
       await Auth.federatedSignIn({ provider: "azure" });
-      navigate('/signout')
+      navigate('/signout');
     } catch (err) {
       console.error("getting error...", err);
     }

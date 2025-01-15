@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<FederatedSignIn />}></Route>
-          <Route path="/signout" element={<SignOutComp />}> </Route>
+          <Route path="/redirecting" element={<SignOutComp />}> </Route>
         </Routes>
       </BrowserRouter>
       {/* <h2>Hi This is the federated Signin</h2> */}
